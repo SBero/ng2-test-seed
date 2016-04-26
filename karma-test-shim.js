@@ -11,7 +11,7 @@ __karma__.loaded = function() {};
 
 System.config({
   packages: {
-    'base/src/app': {
+    'base/dist/src/app': {
       defaultExtension: false,
       format: 'register',
       map: Object.keys(window.__karma__.files).
@@ -19,7 +19,7 @@ System.config({
             reduce(function createPathRecords(pathsMapping, appPath) {
               // creates local module name mapping to global path with karma's fingerprint in path, e.g.:
               // './hero.service': '/base/src/app/hero.service.js?f4523daf879cfb7310ef6242682ccf10b2041b3e'
-              var moduleName = appPath.replace(/^\/base\/src\/app\//, './').replace(/\.js$/, '');
+              var moduleName = appPath.replace(/^\/base\/dist\/src\/app\//, './').replace(/\.js$/, '');
               pathsMapping[moduleName] = appPath + '?' + window.__karma__.files[appPath]
               return pathsMapping;
             }, {})
@@ -39,6 +39,7 @@ System.import('angular2/testing').then(function(testing) {
     .filter(onlySpecFiles)
     // .map(filePath2moduleName)        // Normalize paths to module names.
     .map(function(moduleName) {
+      console.log(moduleName);
       // loads all spec files via their global module names (e.g. 'base/src/app/hero.service.spec')
       return System.import(moduleName);
     }));
@@ -58,10 +59,11 @@ function filePath2moduleName(filePath) {
 
 
 function onlyAppFiles(filePath) {
-  return /^\/base\/src\/app\/.*\.js$/.test(filePath)
+  return /^\/base\/dist\/src\/app\/.*\.js$/.test(filePath)
 }
 
 
 function onlySpecFiles(path) {
+  console.log(path);
   return /_test\.js$/.test(path);
 }

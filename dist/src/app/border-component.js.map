@@ -1,0 +1,1 @@
+{"version":3,"file":"border-component.js","sourceRoot":"","sources":["../../../src/app/border-component.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAQA;gBAAA;gBAEA,CAAC;gBARD;oBAAC,gBAAS,CAAC;wBACT,QAAQ,EAAE,iBAAiB;wBAC3B,WAAW,EAAE,2BAA2B;wBACxC,SAAS,EAAE,CAAC,0BAA0B,CAAC;wBACvC,MAAM,EAAE,CAAC,cAAc,CAAC;qBACzB,CAAC;;mCAAA;gBAGF,sBAAC;YAAD,CAAC,AAFD,IAEC;YAFD,6CAEC,CAAA"}
